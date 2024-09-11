@@ -1,6 +1,6 @@
 ﻿public class AnimalRepository
 {
-    private readonly List<AnimalCQRS> _animals = new List<AnimalCQRS>();
+    public readonly List<AnimalCQRS> _animals = new List<AnimalCQRS>();
 
     public void Add(AnimalCQRS animal) =>
         _animals.Add(animal);

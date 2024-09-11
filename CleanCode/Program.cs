@@ -15,12 +15,14 @@ static void ChamarCQRS()
     var repository = new AnimalRepository();
 
     // Comando: Adicionar um animal
+    var animalCommand = new AddAnimalCommand("Leão", "Felino");
     var objCommandHandler = new AddAnimalCommandHandler(repository);
-    objCommandHandler.Handle(new AddAnimalCommand("Leão", "Felino"));
+    objCommandHandler.Handle(animalCommand);
 
     // Consulta: Buscar um animal pelo ID
+    var ID = repository._animals[0].Id;
     var queryHandler = new GetAnimalByIdQueryHandler(repository);
-    var animal = queryHandler.Handle(new GetAnimalByIdQuery(Guid.Parse("id-do-animal")));
+    var animal = queryHandler.Handle(new GetAnimalByIdQuery(ID));
 }
 
 static void ChamarDRY()

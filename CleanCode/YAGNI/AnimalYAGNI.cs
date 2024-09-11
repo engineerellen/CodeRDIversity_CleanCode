@@ -21,9 +21,7 @@ namespace CleanCode.YAGNI
         }
 
         // Método para obter uma descrição do animal
-        public string ObterDescricao()
-        {
-            return $"{Name} é um {Raca}.";
-        }
+        public string ObterDescricao()=>
+             $"{Name} é um {Raca}.";
     }
 }
